@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/leon/code/HPAndroid/PinnedRecyclerView/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="4b601769623c1bafc96e8cbb68341d0db0b30a75">
+        <dex dex="/Users/leon/code/HPAndroid/PinnedRecyclerView/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_8726d152a5bd925b121658e9535bca1b2cefd19f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/leon/.android/build-cache/78cee53d894440813969f5a77c1a1644f69602ef/output/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c4f45092eee6cdf1a5dbd597b2b6819be652ce2e">
+        <dex dex="/Users/leon/code/HPAndroid/PinnedRecyclerView/app/build/intermediates/transforms/dex/debug/folders/1000/10/classes_28c79a7d1b69a5dc9df70ecd6bd538e5f056d5a6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/leon/code/HPAndroid/PinnedRecyclerView/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="26.0.0"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="/Users/leon/code/HPAndroid/PinnedRecyclerView/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_24e4347e6404aa3d3de97afc16642ac0d60bf2ed/classes.dex" />
+    </item>
+
+</items>
