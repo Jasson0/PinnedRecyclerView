@@ -8,6 +8,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
+import com.example.leon.pinnedrecyclerview.models.ItemData;
+import com.example.leon.pinnedrecyclerview.models.MyData;
+
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,22 +18,31 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView rv_sticky;
     MyAdapter adapter;
 
-    ArrayList<String> strings;
+    ArrayList<MyData> dataList = new ArrayList<>();
+    ArrayList<ItemData> itemDataList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        strings = new ArrayList<>();
-        for (int i = 0; i < 30; i++) {
-            strings.add("" + i);
-            strings.add("" + i);
+        for (int i = 0; i < 10; i++) {
+            ItemData itemData = new ItemData();
+            itemData.title = "LEON" + i + "TITLE";
+            itemData.subTitle = "LEON" + i + "SUBTITLE";
+            itemDataList.add(itemData);
         }
 
-        adapter = new MyAdapter(this, strings);
+        for (int i = 0; i < 5; i++) {
+            MyData myData = new MyData();
+            myData.category = "leon" + i;
+            myData.listData = itemDataList;
+            dataList.add(myData);
+        }
+
+        adapter = new MyAdapter(this, dataList);
 
         header_view = (TextView) findViewById(R.id.header_view);
+
         rv_sticky = (RecyclerView) findViewById(R.id.rv_sticky);
         rv_sticky.setHasFixedSize(true);
         rv_sticky.setLayoutManager(new LinearLayoutManager(this));
@@ -41,12 +53,10 @@ public class MainActivity extends AppCompatActivity {
                 super.onScrolled(recyclerView, dx, dy);
 
                 View stickyInfoView = recyclerView.getChildAt(0);
-                Log.e("leon","-------");
                 if (stickyInfoView != null && stickyInfoView.getContentDescription() != null) {
-                    Log.e("leon","========");
                     header_view.setText(String.valueOf(stickyInfoView.getContentDescription()));
                 }
-                View transInfoView = recyclerView.findChildViewUnder(header_view.getMeasuredWidth() / 2, header_view.getMeasuredHeight() + 1);
+                View transInfoView = recyclerView.findChildViewUnder(0, header_view.getMeasuredHeight() + 1);
                 if (transInfoView != null && transInfoView.getTag() != null) {
                     int tag = (int) transInfoView.getTag();
                     int deltaY = transInfoView.getTop() - header_view.getMeasuredHeight();
